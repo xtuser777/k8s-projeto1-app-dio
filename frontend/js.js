@@ -1,20 +1,20 @@
-$("#button-blue").on("click", function() {
+$("#button-blue").on("click", () => {
     
-    var txt_nome = $("#name").val();
-    var txt_email = $("#email").val();
-    var txt_comentario = $("#comment").val();
+    const txt_nome = $("#name").val();
+    const txt_email = $("#email").val();
+    const txt_comentario = $("#comment").val();
 
     $.ajax({
-        url: "",
+        url: "http://10.97.165.33",
         
         type: "post",
         data: {nome: txt_nome, comentario: txt_comentario, email: txt_email},
-        beforeSend: function() {
+        beforeSend: () => {
         
             console.log("Tentando enviar os dados....");
 
         }
-    }).done(function(e) {
+    }).done((e) => {
         alert("Dados Salvos");
     })
 
